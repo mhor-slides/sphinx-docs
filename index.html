@@ -37,11 +37,102 @@
 
 	<body>
 		<div class="reveal">
-			<!-- Any section element inside of this container is displayed as a slide -->
 			<div class="slides">
 				<section>
 					<h1>Sphinx Docs</h1>
 					<h3><a href="http://github.com/mhor">Maxime HORCHOLLE</a></h3>
+				</section>
+				<section>
+					<h1>C'est quoi</h1>
+					<p class="fragment">- Générateur de documentation statique multi-format</p>
+					<p class="fragment">- Multi-format HTML / PDF / ePub / ...</p>
+    				<p class="fragment">- <a href="http://sphinx-doc.org/rest.html">reStructuredText</a></p>
+				    <p class="fragment">- Utilisé par Symfony entre autre</p>
+				</section>
+				<section>
+	   					<h1>Pourquoi</h1>
+						<p class="fragment">- Configurable</p>
+						<p class="fragment">- Simple</p>
+						<p class="fragment">- Versionnable</p>
+						<p class="fragment">- Maintenable</p>
+						
+				</section>
+				<section>
+					<h1>Installation</h1>
+<pre><code data-trim>
+$ sudo apt-get install python-setuptools
+$ sudo easy_install -U Sphinx
+</code></pre>
+				</section>
+				<section>
+					<h1>Comment ça marche</h1>
+<pre><code data-trim>
+.
+|-- Makefile
+|-- _exts
+|   |-- httpdomain
+|   `-- sphinx-php
+|-- _static
+|   |-- css
+|   |-- img
+|   `-- js
+|-- _templates
+|   |-- _quick_preview.html
+|   |-- layout.html
+|   |-- localtoc.html
+|-- api
+|   `-- general.rst
+|-- conf.py
+|-- index.rst
+
+</code></pre>
+				</section>
+				<section>
+					<h1><a href="http://sphinx-doc.org/markup/toctree.html">toctree</a></h1>
+
+index.rst
+<pre><code data-trim>
+API
+---
+.. toctree::
+    :hidden:
+    
+   api/general
+</code></pre>
+				</section>
+				<section>
+					<h1>Exemple</h1>
+api/general.rst
+<pre><code data-trim>
+API Documentation
+=================
+
+General
+-------
+
+Authentication
+~~~~~~~~~~~~~~
+
+Authentication Query
+````````````````````
+
+*Sample* ``query`` **code**
+
+</code></pre>
+				</section>
+                <section>
+                    <h1>Resultat</h1>
+                    <img src="img/render-rst.png"></img>
+				</section>
+                </section>
+				<section>
+					<h1>Configuration</h1>
+				</section>
+				<section>
+					<h1>Extension</h1>
+				</section>
+				<section>
+					<h1>Customisation</h1>
 				</section>
             </div>
         </div>
